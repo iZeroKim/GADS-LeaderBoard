@@ -13,7 +13,8 @@ class LandingPageActivity : AppCompatActivity() {
              run() {
                 var intent = Intent(this, MainActivity::class.java);
                 startActivity(intent)
+                 overridePendingTransition(R.transition.fade_in,R.transition.fade_out)
             }
-        }, 500);
+        }, 1000);
     }
 }
