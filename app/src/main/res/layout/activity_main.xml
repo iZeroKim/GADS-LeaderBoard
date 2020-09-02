@@ -36,21 +36,12 @@
                 android:textColor="#FFFFFF"/>
         </LinearLayout>
         <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="10dp"
             app:tabTextColor="#FFFFFF"
             app:tabTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Learning Leaders" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Skill IQ Leaders" />
 
         </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
