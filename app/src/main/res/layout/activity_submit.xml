@@ -66,19 +66,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@drawable/pagebackground2"
-        android:gravity="center">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit page"
-            android:textColor="#FFFFFF"
-            android:textSize="36dp"
-            />
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="#FFF"
+                    android:hint="Second name"
+                    app:boxBackgroundMode="filled"
+                    app:hintEnabled="true" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:background="#FFF"
+                    android:hint="First name"
+                    app:boxBackgroundMode="filled"
+                    app:hintEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+
     </LinearLayout>
-
-
 
 
 </LinearLayout>
