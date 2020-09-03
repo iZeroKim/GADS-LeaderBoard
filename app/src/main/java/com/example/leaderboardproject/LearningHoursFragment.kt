@@ -41,8 +41,7 @@ class LearningHoursFragment : androidx.fragment.app.Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProvider.of(LearningHoursViewModel::class.java).get()
-        // TODO: Use the ViewModel
+
     }
 
 }
