@@ -12,13 +12,54 @@
         android:id="@+id/appBarSubmit"
         android:layout_width="match_parent"
         android:background="@drawable/toolbarbackground"
-        android:layout_height="150dp">
+        android:layout_height="170dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="43dp"
+                android:layout_height="82dp"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="261dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.175"
+                app:layout_constraintStart_toEndOf="@+id/backArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/toolbarsubmit" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project Submission"
+                android:textColor="#e65c00"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/backArrow"
-            android:layout_width="64dp"
-            android:layout_height="104dp"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/underline" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
