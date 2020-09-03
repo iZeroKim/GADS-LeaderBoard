@@ -1,9 +1,11 @@
 package com.example.leaderboardproject
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.SimpleOnPageChangeListener
 import com.example.leaderboardproject.R.color.*
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var tabLayout: TabLayout
     lateinit var appBarLayout: AppBarLayout
     lateinit var viewPager: ViewPager
+    lateinit var submitBtn: Button
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,12 +29,19 @@ class MainActivity : AppCompatActivity() {
         tabLayout = findViewById(R.id.tabLayout)
         appBarLayout = findViewById(R.id.appBar)
         viewPager = findViewById(R.id.viewPager)
+        submitBtn = findViewById(R.id.submitBtn)
+
+        submitBtn.setOnClickListener {
+            val intent = Intent(this, SubmitActivity::class.java)
+            startActivity(intent)
+        }
 
         //Get ViewPagerAdapter
         val adapter = ViewPagerAdapter(supportFragmentManager)
         //Add all fragments
-        adapter.AddFragment(SkillIqFragment(), "Skill IQ Leaders")
         adapter.AddFragment(LearningHoursFragment(), "Learning Leaders")
+        adapter.AddFragment(SkillIqFragment(), "Skill IQ Leaders")
+
 
         //Setup adapter
         viewPager.adapter = adapter

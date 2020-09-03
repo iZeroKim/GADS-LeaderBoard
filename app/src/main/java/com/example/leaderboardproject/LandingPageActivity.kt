@@ -15,6 +15,6 @@ class LandingPageActivity : AppCompatActivity() {
                 startActivity(intent)
                  overridePendingTransition(R.transition.fade_in,R.transition.fade_out)
             }
-        }, 1000);
+        }, 2000);
     }
 }
