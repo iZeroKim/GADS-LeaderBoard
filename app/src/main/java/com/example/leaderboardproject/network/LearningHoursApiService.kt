@@ -2,20 +2,21 @@ package com.example.leaderboardproject.network
 
 import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
+
 import retrofit2.http.GET
 
 //Define BASE_Url
-private const val BASE_URL = "https://gadsapi.herokuapp.com/"
+private const val BASE_URL = "https://gadsapi.herokuapp.com/api/"
 
 //Retrofit
 private  val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
-    .addConverterFactory(GsonConverterFactory.create())
+    .addConverterFactory(ScalarsConverterFactory.create())
     .build()
 
 interface LearningHoursApiService {
-    @GET("api/hours")
+    @GET("hours")
     fun getProperties(): Call<String>
 }
 

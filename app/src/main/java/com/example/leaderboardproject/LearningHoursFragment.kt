@@ -29,7 +29,7 @@ class LearningHoursFragment : androidx.fragment.app.Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         //Databinding object
-        val binding = LearningHoursFragmentBinding.inflate(inflater)
+        val binding = LearningHoursFragmentBinding.inflate(inflater, container, false)
 
         //Allow data binding to Obsere LiveData with the lifecycle of this Fragment
         binding.setLifecycleOwner(this)
