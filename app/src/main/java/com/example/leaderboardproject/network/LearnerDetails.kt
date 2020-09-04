@@ -1,4 +1,8 @@
 package com.example.leaderboardproject.network
 
-class LearnerDetails {
-}
+data class LearnerDetails(
+    val name:String,
+    val hours: Int,
+    val country: String,
+    val badgeUrl: String
+)
