@@ -1,8 +1,8 @@
-package com.example.leaderboardproject.network
+package com.example.leaderboardproject.network.learninghours
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
-import kotlinx.coroutines.Deferred
-import retrofit2.Call
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -16,18 +16,19 @@ private const val BASE_URL = "https://gadsapi.herokuapp.com/api/"
 //Moshi
 private val moshi = Moshi.Builder()
         //Use this with annotations
-    //.add(KotlinJsonAdapterFactory())
+    .add(KotlinJsonAdapterFactory())
     .build()
 
 //Retrofit
 private  val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .addCallAdapterFactory(CoroutineCallAdapterFactory())
     .baseUrl(BASE_URL)
     .build()
 
 interface LearningHoursApiService {
     @GET("hours")
-    suspend fun getProperties(): Deferred<List<LearnerDetails>>
+    suspend fun getProperties(): List<LearnerDetails>
 }
 
 //Object to initialize the Retrofit service.

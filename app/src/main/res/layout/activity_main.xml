@@ -10,39 +10,44 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_height="90dp"
+        android:background="@drawable/toolbarbackground"
         android:elevation="10dp"
-        android:background="@drawable/toolbarbackground">
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LEADERBOARD"
                 android:layout_marginStart="48dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="48dp"
+                android:text="LEADERBOARD"
                 android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-                android:textColor="#FFFFFF"
-                />
+                android:textColor="#FFFFFF" />
+
             <Button
                 android:id="@+id/submitBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Submit"
+                android:layout_height="30dp"
                 android:layout_marginStart="64dp"
+                android:background="@drawable/mainbutton"
+                android:text="Submit"
                 android:textAllCaps="false"
-                android:textColor="#FFFFFF"/>
+                android:textColor="@color/colorPrimary" />
         </LinearLayout>
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorHeight="10dp"
-            app:tabTextColor="#FFFFFF"
-            app:tabTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+            app:tabTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+            app:tabTextColor="#FFFFFF">
 
         </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
