@@ -3,7 +3,9 @@ package com.example.leaderboardproject
 import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.leaderboardproject.network.learninghours.LearnerDetails
 
 @BindingAdapter("imageUrl")
 fun bindImage(imageView: ImageView, url: String?){
@@ -11,4 +13,10 @@ fun bindImage(imageView: ImageView, url: String?){
         val imgUri = url?.toUri()?.buildUpon()?.scheme("https")?.build()
         Glide.with(imageView.context).load(imgUri).into(imageView)
     }
+}
+
+@BindingAdapter("LearnersList")
+fun bindRecyclerView(recyclerView: RecyclerView, data: List<LearnerDetails>?){
+    val adapter =  recyclerView.adapter as LearnerAdapter
+    adapter.submitList(data)
 }
