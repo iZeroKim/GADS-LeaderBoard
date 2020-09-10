@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="learnerDetails"
-            type="com.example.leaderboardproject.network.learninghours.LearnerDetails" />
+            name="learneriqDetails"
+            type="com.example.leaderboardproject.network.skilliq.LearnerIQDetails" />
     </data>
 
 
@@ -43,7 +43,7 @@
                     android:paddingEnd="10dp"
 
                     android:paddingBottom="10dp"
-                    app:imageUrl="@{learnerDetails.badgeUrl}"
+                    app:imageUrl="@{learneriqDetails.badgeUrl}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -53,7 +53,7 @@
                     android:id="@+id/txvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{learnerDetails.name}"
+                    android:text="@{learneriqDetails.name}"
                     android:textAlignment="viewStart"
                     android:textSize="24dp"
                     android:textStyle="bold"
@@ -65,7 +65,7 @@
                     android:id="@+id/txvLeadershipUnit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{String.valueOf(learnerDetails.hours)}"
+                    android:text="@{String.valueOf(learneriqDetails.score)}"
                     android:textSize="18dp"
                     android:textAlignment="viewStart"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text=" learning hours, "
+                    android:text=" skill IQ score, "
                     android:textSize="18dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/txvCountry2"
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:text="@{learnerDetails.country}"
+                    android:text="@{learneriqDetails.country}"
                     android:textSize="18dp"
                     android:textAlignment="viewStart"
                     app:layout_constraintBottom_toBottomOf="parent"

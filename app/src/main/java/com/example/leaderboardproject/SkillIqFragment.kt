@@ -33,6 +33,7 @@ class SkillIqFragment : Fragment() {
 
         //Give the binding access to LearningHoursViewModel
         binding.viewModel = viewModel
+        binding.rcViewIq.adapter = LearnerIQAdapter()
         return binding.root
     }
 
