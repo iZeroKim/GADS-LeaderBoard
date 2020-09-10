@@ -16,10 +16,10 @@ import java.lang.Exception
 
 class LearningHoursViewModel : ViewModel() {
     // single Learner Detail LiveData (internal mutable and external immutable)
-    private val _learner = MutableLiveData<LearnerDetails>()
+    private val _learners = MutableLiveData<List<LearnerDetails>>()
 
-    val learner: LiveData<LearnerDetails>
-        get() = _learner
+    val learners: LiveData<List<LearnerDetails>>
+        get() = _learners
 
     private val _response = MutableLiveData<String>()
 
@@ -34,7 +34,7 @@ class LearningHoursViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val resultList = LearningHoursApi.retrofitService.getProperties()
-                _learner.value = resultList[0]
+                _learners.value = resultList
 
             } catch (e: Exception){
                _response.value = "Failure: ${e.message}"

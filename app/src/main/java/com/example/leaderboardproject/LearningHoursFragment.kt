@@ -34,8 +34,8 @@ class LearningHoursFragment : androidx.fragment.app.Fragment() {
 
         //Give the binding access to LearningHoursViewModel
         binding.viewModel = viewModel
-        //val adapter = LearnerAdapter(viewModel.list, this)
-        //rcView.adapter = adapter
+        binding.rcView.adapter = LearnerAdapter()
+
 
 
         return binding.root
