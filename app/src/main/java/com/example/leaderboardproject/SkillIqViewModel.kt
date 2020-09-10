@@ -25,7 +25,7 @@ class SkillIqViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val resultList = SkillIQApi.retrofitService.getProperties()
-                _name.value = resultList.toString()
+                _name.value = resultList[0].toString()
 
             } catch (e: Exception){
                 _name.value = "Failure: ${e.message}"

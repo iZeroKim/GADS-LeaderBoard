@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp">
-
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="learnerDetails"
+            type="com.example.leaderboardproject.network.learninghours.LearnerDetails" />
+    </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/mainbutton"
+        android:elevation="10dp"
         app:cardElevation="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +25,7 @@
                 android:id="@+id/badgeImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:imageUrl="@{learnerDetails.badgeUrl}"
                 android:layout_marginStart="10dp"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
@@ -34,7 +40,7 @@
                 android:id="@+id/txvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Learner Name"
+                android:text="@{learnerDetails.name}"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/badgeImage"
@@ -44,7 +50,7 @@
                 android:id="@+id/txvLeadershipUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="223 leraning hours"
+                android:text="@{learnerDetails.hours}"
                 app:layout_constraintStart_toEndOf="@+id/badgeImage"
                 app:layout_constraintTop_toBottomOf="@+id/txvName" />
 
@@ -52,10 +58,21 @@
                 android:id="@+id/txvCountry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Country"
+                android:text=" learning hours, "
                 app:layout_constraintStart_toEndOf="@+id/txvLeadershipUnit"
                 app:layout_constraintTop_toBottomOf="@+id/txvName" />
 
+            <TextView
+                android:id="@+id/txvCountry2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{learnerDetails.country}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txvCountry"
+                app:layout_constraintTop_toTopOf="@+id/txvLeadershipUnit" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-</FrameLayout>
+
+</layout>
+

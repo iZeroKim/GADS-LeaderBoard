@@ -1,15 +1,13 @@
 package com.example.leaderboardproject
 
-import android.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.leaderboardproject.databinding.LearningHoursFragmentBinding
-import java.util.EnumSet.of
-import java.util.List.of
+import kotlinx.android.synthetic.main.learning_hours_fragment.*
 
 class LearningHoursFragment : androidx.fragment.app.Fragment() {
 
@@ -36,6 +34,10 @@ class LearningHoursFragment : androidx.fragment.app.Fragment() {
 
         //Give the binding access to LearningHoursViewModel
         binding.viewModel = viewModel
+        //val adapter = LearnerAdapter(viewModel.list, this)
+        //rcView.adapter = adapter
+
+
         return binding.root
     }
 
