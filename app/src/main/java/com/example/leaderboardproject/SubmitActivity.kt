@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import com.example.leaderboardproject.network.submission.SubmitProjectApi
 import com.google.android.material.appbar.AppBarLayout
 import retrofit2.Call
@@ -22,7 +23,22 @@ class SubmitActivity : AppCompatActivity() {
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        submitBtn.setOnClickListener {submitProject()}
+        submitBtn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val inflater = layoutInflater
+            val dialogLayout = inflater.inflate(R.layout.dialog_sure, null)
+            val cancelBtn  = dialogLayout.findViewById<ImageView>(R.id.imagefailure)
+            val acceptBtn = dialogLayout.findViewById<Button>(R.id.yesButton)
+            builder.setView(dialogLayout)
+            builder.show()
+
+            cancelBtn.setOnClickListener {
+                builder.show().dismiss()
+            }
+            acceptBtn.setOnClickListener {
+                submitProject()
+            }
+            }
     }
 
     fun submitProject(){
@@ -33,19 +49,23 @@ class SubmitActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.githublink).text.toString()
         ).enqueue(object: Callback<Void>{
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                Toast.makeText(this@SubmitActivity, "Success: ${response.toString()}", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(this@SubmitActivity)
+                val inflater = layoutInflater
+                val dialogLayout = inflater.inflate(R.layout.dialog_success, null)
+                builder.setView(dialogLayout)
+                builder.show()
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
-                Toast.makeText(this@SubmitActivity, "Success: ${t.toString()}", Toast.LENGTH_LONG).show()
+                val builder = AlertDialog.Builder(this@SubmitActivity)
+                val inflater = layoutInflater
+                val dialogLayout = inflater.inflate(R.layout.dialog_failure, null)
+                builder.setView(dialogLayout)
+                builder.show()
             }
         })
     }
 
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 }
 
